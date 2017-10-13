@@ -59,8 +59,18 @@ public class PlayingWithAlgo {
 		return reponse;
 	}
 
+	// fait
 	public static String[] reverseWordsInMyStringArray(String array[]) {
-		return null;
+		String reponse [] = new String [array.length];
+		for (int i = 0 ; i <= array.length-1 ; i++) {
+			String motOrigine = array [i];
+			String motInverse = "";
+			for (int j = array [i].length() - 1; j >= 0 ; j--) {
+				motInverse = motInverse + motOrigine.charAt(j);
+			}
+			reponse [i] = motInverse;
+		}
+		return reponse;
 	}
 
 	// fait
@@ -72,12 +82,31 @@ public class PlayingWithAlgo {
 		return resultat;
 	}
 
+	// TODO 
 	public static String[][] everyPossiblePair(String array[]) {
 		return null;
 	}
 
+	// fait
 	public static List<String> sortByLastLetter(String array[]) {
-		return null;
+		List<String> reponse = new ArrayList<String> ();
+		for (int i = 0 ; i < array.length-1 ; i++){			
+			for (int j = i+1; j < array.length ; j++ ) {
+				String mot1 = array [i];
+				int asciii = (int) mot1.charAt(mot1.length ()- 1);
+				String mot2 = array [j];
+				int asciij = (int) mot2.charAt(mot2.length ()- 1);
+				if (asciii > asciij) {
+					String grand = array [i];
+					String petit = array [j];
+					array [i] = petit;
+					array [j] = grand;
+				}
+			}
+			reponse.add(array [i]);
+		}
+		reponse.add(array [array.length - 1]);
+		return reponse;
 	}
 
 	// fait
@@ -148,8 +177,19 @@ public class PlayingWithAlgo {
 		return null;
 	}
 
+	// fait
 	public static int[] letterPosition(String name) {
-		return null;
+		int reponse [] = new int [name.length ()];
+		for (int i = 0; i < name.length() ; i++) {
+			int asciiLettre = (int) name.charAt(i);
+			if (asciiLettre < 91) {
+				reponse [i] = asciiLettre - 64;
+			}
+			else {
+				reponse [i] = asciiLettre - 96;
+			}
+		}
+		return reponse;
 	}
 	
 	// fait
@@ -188,11 +228,17 @@ public class PlayingWithAlgo {
 		return resultat;
 	}
 
+	// fait
 	public static Float makeNegative(Float number) {
-		return null;
+		Float reponse = number;
+		if (number > 0) {
+			reponse = reponse * -1;
+		}
+		return reponse;
 	}
 
 	public static String[] getElementsLowerThanSix(String[] array) {
+		
 		return null;
 	}
 	
