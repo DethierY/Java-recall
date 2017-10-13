@@ -17,7 +17,7 @@ public class PlayingWithAlgo {
 
 	// fait
 	public static List<String> selectElementsStartingWithA(String array[]) {
-		ArrayList<String> reponse = new ArrayList<String> ();
+		List<String> reponse = new ArrayList<String> ();
 		for (int i = 0 ; i < array.length ; i++) {
 			if (array [i].charAt(0) == 'a') {
 				reponse.add(array [i]);
@@ -28,7 +28,7 @@ public class PlayingWithAlgo {
 
 	// fait
 	public static List<String> selectElementsStartingWithVowel(String array[]) {
-		List<String> reponse =new ArrayList<String>();
+		List<String> reponse = new ArrayList<String>();
 		char lettre;
 		for (int i = 0; i < array.length ; i++) {
 			if (array [i] == null) {
@@ -44,8 +44,19 @@ public class PlayingWithAlgo {
 		return reponse;
 	}
 
+	// fait
 	public static String[] removeNullElements(String array[]) {
-		return null;
+		ArrayList<String> temp = new ArrayList<String> ();
+		for (int i = 0 ; i < array.length ; i++) {
+			if ( array [i] != null) {
+				temp.add(array [i]);
+			}
+		}
+		String reponse [ ]= new String [temp.size()];
+		for (int i = 0 ; i < temp.size() ; i++) {
+			reponse [i] = temp.get (i);
+		}
+		return reponse;
 	}
 
 	public static String[] reverseWordsInMyStringArray(String array[]) {
